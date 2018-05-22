@@ -20,7 +20,7 @@ namespace MidiAnim
 
         static class Styles
         {
-            public static readonly GUIContent TrackIndex = new GUIContent("TrackIndex");
+            public static readonly GUIContent TrackIndex = new GUIContent("Track Index");
             public static readonly GUIContent BPM = new GUIContent("BPM");
         }
 
