@@ -105,6 +105,9 @@ namespace MidiAnim
         {
             var dest = new AnimationClip();
 
+            // Enable looping
+            dest.wrapMode = WrapMode.Loop;
+
             // Beat count/clock
             FlattenTangents(_beatCount);
             SawtoothTangents(_beatClock);

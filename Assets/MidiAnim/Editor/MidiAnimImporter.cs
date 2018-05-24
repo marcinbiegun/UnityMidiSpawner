@@ -37,6 +37,7 @@ namespace MidiAnim
             }
 
             var anim = clip.ConvertToAnimationClip();
+            anim.wrapMode = WrapMode.Loop;
             context.AddObjectToAsset("MIDI", anim);
             context.SetMainObject(anim);
         }
