@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 37e49d66c46f1b84cbdf29d43a0ab0e1
+ScriptedImporter:
+  fileIDToRecycleName:
+    7400000: MIDI
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 0de2eb63f5e992643910e6040ef86396, type: 3}
+  _trackIndex: 7
+  _bpm: 195
+  _gateEasing: 0
+  _attackTime: 0.1
+  _releaseTime: 0.3
