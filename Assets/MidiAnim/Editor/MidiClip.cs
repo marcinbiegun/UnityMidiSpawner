@@ -127,6 +127,7 @@ namespace MidiAnim
                 else
                     FlattenTangents(curve);
                 dest.SetCurve("", typeof(MidiState), "Note[" + i + "]", curve);
+                dest.SetCurve("", typeof(MidiState), "Note" + i, curve);
             }
 
             // CC curves
@@ -136,6 +137,7 @@ namespace MidiAnim
                 if (curve == null) continue;
                 LinearizeTangents(curve);
                 dest.SetCurve("", typeof(MidiState), "CC[" + i + "]", curve);
+                dest.SetCurve("", typeof(MidiState), "CC" + i, curve);
             }
 
             return dest;
