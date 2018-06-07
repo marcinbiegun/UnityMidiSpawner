@@ -5,6 +5,9 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+# macOS
+.DS_Store
+
 # Visual Studio cache directory
 .vs/
 

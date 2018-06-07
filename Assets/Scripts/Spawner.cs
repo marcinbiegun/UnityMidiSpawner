@@ -1,69 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour {
 
+    public int trackId;
     public GameObject spawnPrefab;
-    public GameObject spawnsHolder;
-    public bool spawningEnabled = false;
-    public float spawnThurst = 1f;
+    public bool state = false;
+    public float forwardThurst = 250f;
+    public float randomThurst = 0f;
 
     public int[] notes;
     private float[] lastNoteValues = new float[10];
 
-    public void ToggleSpawning()
-    {
-        bool newState = !spawningEnabled;
-        spawningEnabled = newState;
-
-        if (newState == true)
-        {
-            GetComponent<AudioSource>().volume = 1;
-        } else
-        {
-            GetComponent<AudioSource>().volume = 0;
-        }
-    }
-
     void Start()
     {
-        //Debug.Log("animator " + GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.wrapMode);
+        state = false;
         for (int index = 0; index < notes.Length; index++)
-        {
             lastNoteValues[index] = 0f;
-        }
     }
 
 	void Update () {
-        //Debug.Log("wrapmode " + GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.wrapMode);
-        if (spawningEnabled == false) { return; }
+        if (state == false) { return; }
 
         for (int index = 0; index < notes.Length; index++)
         {
-            int note = notes[index];
-            float noteValue = GetComponent<MidiAnim.MidiState>().ReadNoteValue(note);
+            int noteId = notes[index];
+            float noteValue = GetComponent<MidiAnim.MidiState>().ReadNoteValue(noteId);
             float lastNoteValue = lastNoteValues[index];
             if (noteValue > 0 && lastNoteValue == 0)
-            {
                 Spawn(index);
-            }
             lastNoteValues[index] = noteValue;
         }
 	}
 
     private void Spawn(int index)
     {
-        Vector3 randomDirection = Random.insideUnitSphere;
         Quaternion randomRotation = Random.rotation;
-
         float offset = 2f;
         Vector3 positionOffset = new Vector3(0f, 0f, (offset * index) - (notes.Length / 2) * offset);
 
         GameObject newObject = Instantiate(spawnPrefab, transform.position + positionOffset, randomRotation);
-        newObject.transform.SetParent(spawnsHolder.transform);
-        Rigidbody rb = newObject.GetComponent<Rigidbody>();
-        rb.AddForce(randomDirection * spawnThurst);
+        newObject.transform.SetParent(GameManager.instance.spawnerManager.spawnsHolder.transform);
+
+        Rigidbody rigidbody = newObject.GetComponent<Rigidbody>();
+        rigidbody.AddForce(transform.forward * forwardThurst);
+        rigidbody.AddForce(Random.insideUnitSphere * randomThurst);
     }
 	
 }
