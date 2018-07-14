@@ -2,7 +2,7 @@
 
 This component reads MIDI files and spawns an object for each note. Just a proof of concept at this point, I plan to make it more visually appealing. :)
 
-Here's how the project looks right now:
+Here's a video recording with how the project looks right now:
 
 [![UnityMidiSpawner](https://img.youtube.com/vi/YODaXBKT7gE/0.jpg)](https://www.youtube.com/watch?v=YODaXBKT7gE)
 
