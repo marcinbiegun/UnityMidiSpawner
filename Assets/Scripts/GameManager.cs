@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
         audioManager.Setup();
         stageManager.Setup();
         spawnerManager.Setup();
+        ChangeStage(0);
     }
 
     public void ToggleTrackState(int index) {
@@ -55,11 +56,12 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < uiManager.spawnerButtons.Length; i++) {
             spawnerManager.SetSpawnerState(i, uiManager.GetSpawnerButtonState(i));
         }
+        spawnerManager.Restart();
+        audioManager.Restart();
     }
 
     void Update()
     {
-        // Close the app on ESC key
         if (Input.GetKeyDown("escape"))
             Application.Quit();
 

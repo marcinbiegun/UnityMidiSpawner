@@ -12,6 +12,7 @@ public class StageManager : MonoBehaviour {
 
     public void ChangeActiveStage(int index)
     {
+        // Set active
         for (var i = 0; i < stages.Count; i++)
             stages[i].SetActive(i == index);
     }

@@ -2633,11 +2633,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114586089170858496, guid: 295e543df1b147745a3f1a85d66f69bb,
-        type: 2}
-      propertyPath: stages.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4487703842372170, guid: 295e543df1b147745a3f1a85d66f69bb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2700,6 +2695,21 @@ Prefab:
       propertyPath: stages.Array.data[1]
       value: 
       objectReference: {fileID: 1486403653}
+    - target: {fileID: 82967614216562260, guid: 295e543df1b147745a3f1a85d66f69bb,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82960770209553214, guid: 295e543df1b147745a3f1a85d66f69bb,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82008566089406944, guid: 295e543df1b147745a3f1a85d66f69bb,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 295e543df1b147745a3f1a85d66f69bb, type: 2}
   m_IsPrefabParent: 0
@@ -4158,7 +4168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1738557611
 Transform:
   m_ObjectHideFlags: 0

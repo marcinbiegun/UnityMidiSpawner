@@ -31,4 +31,8 @@ public class SpawnerManager : MonoBehaviour {
         spawners[index].GetComponent<Spawner>().state = state;
     }
 
+    public void Restart() {
+        // Nothing to do currently
+    }
+
 }

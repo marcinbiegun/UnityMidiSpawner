@@ -484,7 +484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5403d91b6a6b64d8f077a8666ae980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stages: []
+  stages:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114801753457889854
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -24,4 +24,12 @@ public class AudioManager : MonoBehaviour {
         audioTracks[index].GetComponent<AudioSource>().volume = state ? 1 : 0;
     }
 
+    public void Restart() {
+        foreach (var audioTrack in audioTracks) {
+            audioTrack.GetComponent<AudioSource>().Stop();
+            audioTrack.GetComponent<AudioSource>().Play();
+        }
+
+    }
+
 }
