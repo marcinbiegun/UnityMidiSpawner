@@ -18,17 +18,17 @@ public class SpawnerManager : MonoBehaviour {
         foreach (GameObject spawner in GameObject.FindGameObjectsWithTag("Spawner"))
             spawners.Add(spawner);
         //spawners.Sort((x, y) => x.transform.GetSiblingIndex().CompareTo(y.transform.GetSiblingIndex()));
-        spawners.Sort((x, y) => x.GetComponent<Spawner>().trackId.CompareTo(y.GetComponent<Spawner>().trackId));
+        spawners.Sort((x, y) => x.GetComponent<SpawnerRx>().trackId.CompareTo(y.GetComponent<SpawnerRx>().trackId));
     }
 
     public bool GetSpawnerState(int index)
     {
-        return spawners[index].GetComponent<Spawner>().state;
+        return spawners[index].activeInHierarchy;
     }
 
     public void SetSpawnerState(int index, bool state)
     {
-        spawners[index].GetComponent<Spawner>().state = state;
+        spawners[index].SetActive(state);
     }
 
     public void Restart() {
