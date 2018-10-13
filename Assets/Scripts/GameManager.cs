@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         audioManager.Setup();
         stageManager.Setup();
         spawnerManager.Setup();
-        ChangeStage(0);
+        //ChangeStage(0);
     }
 
     public void ToggleTrackState(int index) {

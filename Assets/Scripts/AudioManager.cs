@@ -17,7 +17,11 @@ public class AudioManager : MonoBehaviour {
         // Disable all by default
         for (int index = 0; index < audioTracks.Count; index++)
             SetAudioState(index, false);
+
+        
+        //MessageBroker.Default.Receive<TestArgs>().Subscribe(x => UnityEngine.Debug.Log(x));
     }
+
 
     public void SetAudioState(int index, bool state)
     {
