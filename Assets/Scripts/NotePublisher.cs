@@ -14,13 +14,13 @@ public class NotePublisher : MonoBehaviour {
             float noteValue = GetComponent<MidiAnim.MidiState>().ReadNoteValue(note);
             float lastNoteValue = lastNoteValues[note];
             if (noteValue > 0f && lastNoteValue == 0f)
-                Emit(note, noteValue);
+                EmitNote(note, noteValue);
             lastNoteValues[note] = noteValue;
         }
 
     }
 	
-	void Emit (int note, float power) {
+	void EmitNote (int note, float power) {
         var msg = new NoteEvent { Note = note, Power = power, Track = Track };
         MessageBroker.Default.Publish(msg);
     }

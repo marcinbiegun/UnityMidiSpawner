@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 13459152}
   - component: {fileID: 13459151}
   m_Layer: 0
-  m_Name: NotesPublisher_Synth9
+  m_Name: Track_Synth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -670,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34df9b9148d580d4f89d2598fc7b1f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Track: 9
+  Track: 2
 --- !u!1 &31566874
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +868,7 @@ GameObject:
   - component: {fileID: 124222586}
   - component: {fileID: 124222585}
   m_Layer: 0
-  m_Name: NotesPublisher_Drum8
+  m_Name: Track_Drum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1412,7 +1412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34df9b9148d580d4f89d2598fc7b1f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Track: 8
+  Track: 1
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,9 +1589,9 @@ GameObject:
   - component: {fileID: 334195679}
   - component: {fileID: 334195678}
   m_Layer: 0
-  m_Name: SpawnerRx_Drum8
+  m_Name: SpawnerRx_Drum
   m_TagString: Spawner
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1606,7 +1606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c19c65e91dba8d469cbe2bee7562cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackId: 8
+  track: 1
   centerNote: 24
   noteSpread: {x: 0, y: 0.1, z: 0}
   spawnPrefab: {fileID: 1478702098727814, guid: 889d56e3f3368c74fa222e3c12cd4895,
@@ -1743,7 +1743,6 @@ GameObject:
   - component: {fileID: 415726899}
   - component: {fileID: 415726898}
   - component: {fileID: 415726897}
-  - component: {fileID: 415726896}
   - component: {fileID: 415726895}
   m_Layer: 0
   m_Name: GameManager
@@ -1767,20 +1766,6 @@ MonoBehaviour:
   stages:
   - {fileID: 1738557610}
   - {fileID: 1486403653}
---- !u!114 &415726896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114309255162231758, guid: 295e543df1b147745a3f1a85d66f69bb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 415726894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65934d8cb2ae81e4b81a3cf5f3154157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnsHolder: {fileID: 0}
-  spawners: []
 --- !u!114 &415726897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1806,10 +1791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80ea77e038f19145a6f607bdddbfe5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnerButtons:
-  - {fileID: 2104983893}
-  - {fileID: 1397123916}
-  - {fileID: 505643176}
   stageDropdown: {fileID: 1105065308}
 --- !u!114 &415726899
 MonoBehaviour:
@@ -1825,8 +1806,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 0}
   audioManager: {fileID: 0}
-  spawnerManager: {fileID: 0}
   stageManager: {fileID: 0}
+  spawnsHolder: {fileID: 0}
 --- !u!4 &415726900
 Transform:
   m_ObjectHideFlags: 0
@@ -2024,24 +2005,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fe25387930144f687656df81b57292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackId: 7
-  spawnPrefab: {fileID: 1294710033409498, guid: 1c8639224900f7e4d8850f7051962cf3,
-    type: 2}
-  state: 0
-  forwardThurst: 300
-  randomThurst: 100
-  notes: 240000002600000028000000
-  lastNoteValues:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
 --- !u!95 &504760795
 Animator:
   serializedVersion: 3
@@ -2471,11 +2434,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505643175}
+  - component: {fileID: 505643179}
   - component: {fileID: 505643178}
   - component: {fileID: 505643177}
   - component: {fileID: 505643176}
   m_Layer: 5
-  m_Name: ButtonSynth9
+  m_Name: ButtonSynth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2575,6 +2539,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 505643174}
   m_CullTransparentMesh: 0
+--- !u!114 &505643179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505643174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c455eeed6d7d1974ab520bc3ae475630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Track: 2
 --- !u!1 &539807464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,24 +2862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fe25387930144f687656df81b57292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackId: 9
-  spawnPrefab: {fileID: 1143179106977622, guid: f2056433cacf05b429854f8b04f6e78b,
-    type: 2}
-  state: 0
-  forwardThurst: 250
-  randomThurst: 0
-  notes: 26000000280000002b0000002d0000003000000032000000
-  lastNoteValues:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
 --- !u!95 &1075562521
 Animator:
   serializedVersion: 3
@@ -3728,10 +3686,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1397123915}
   - component: {fileID: 1397123918}
+  - component: {fileID: 1397123919}
   - component: {fileID: 1397123917}
   - component: {fileID: 1397123916}
   m_Layer: 5
-  m_Name: ButtonDrum8
+  m_Name: ButtonDrum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3831,6 +3790,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1397123914}
   m_CullTransparentMesh: 0
+--- !u!114 &1397123919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397123914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c455eeed6d7d1974ab520bc3ae475630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Track: 1
 --- !u!1 &1410363842
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,9 +3923,9 @@ GameObject:
   - component: {fileID: 1472028469}
   - component: {fileID: 1472028468}
   m_Layer: 0
-  m_Name: SpawnerRx_Hat7
+  m_Name: SpawnerRx_Hat
   m_TagString: Spawner
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3969,7 +3940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c19c65e91dba8d469cbe2bee7562cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackId: 7
+  track: 0
   centerNote: 38
   noteSpread: {x: 0, y: 0.1, z: 0}
   spawnPrefab: {fileID: 1294710033409498, guid: 1c8639224900f7e4d8850f7051962cf3,
@@ -4034,24 +4005,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fe25387930144f687656df81b57292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackId: 8
-  spawnPrefab: {fileID: 1478702098727814, guid: 889d56e3f3368c74fa222e3c12cd4895,
-    type: 2}
-  state: 0
-  forwardThurst: 350
-  randomThurst: 100
-  notes: 18000000
-  lastNoteValues:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
 --- !u!95 &1473251507
 Animator:
   serializedVersion: 3
@@ -5075,9 +5028,9 @@ GameObject:
   - component: {fileID: 2046793117}
   - component: {fileID: 2046793116}
   m_Layer: 0
-  m_Name: SpawnerRx_Synth9
+  m_Name: SpawnerRx_Synth
   m_TagString: Spawner
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5092,7 +5045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c19c65e91dba8d469cbe2bee7562cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackId: 9
+  track: 2
   centerNote: 44
   noteSpread: {x: 0, y: 0.1, z: 0}
   spawnPrefab: {fileID: 1143179106977622, guid: f2056433cacf05b429854f8b04f6e78b,
@@ -5125,7 +5078,7 @@ GameObject:
   - component: {fileID: 2059543067}
   - component: {fileID: 2059543069}
   m_Layer: 0
-  m_Name: NotesPublisher_Hat7
+  m_Name: Track_Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5268,7 +5221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34df9b9148d580d4f89d2598fc7b1f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Track: 7
+  Track: 0
 --- !u!114 &2059543069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5888,11 +5841,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2104983892}
+  - component: {fileID: 2104983896}
   - component: {fileID: 2104983895}
   - component: {fileID: 2104983894}
   - component: {fileID: 2104983893}
   m_Layer: 5
-  m_Name: ButtonHat7
+  m_Name: ButtonHat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5992,6 +5946,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2104983891}
   m_CullTransparentMesh: 0
+--- !u!114 &2104983896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2104983891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c455eeed6d7d1974ab520bc3ae475630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Track: 0
 --- !u!1 &2111404856
 GameObject:
   m_ObjectHideFlags: 0

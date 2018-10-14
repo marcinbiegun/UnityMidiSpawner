@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
 
     public UIManager uiManager;
     public AudioManager audioManager;
-    public SpawnerManager spawnerManager;
     public StageManager stageManager;
+    public GameObject spawnsHolder;
 
     void Awake()
     {
@@ -25,8 +25,13 @@ public class GameManager : MonoBehaviour
         // Store reference to other manager intances
         uiManager = GetComponent<UIManager>();
         audioManager = GetComponent<AudioManager>();
-        spawnerManager = GetComponent<SpawnerManager>();
         stageManager = GetComponent<StageManager>();
+
+        if (spawnsHolder == null)
+        {
+            spawnsHolder = new GameObject(name: "SpawnsHolder") as GameObject;
+            spawnsHolder.transform.SetParent(null);
+        }
 
         Setup();
     }
@@ -36,27 +41,13 @@ public class GameManager : MonoBehaviour
         uiManager.Setup();
         audioManager.Setup();
         stageManager.Setup();
-        spawnerManager.Setup();
         //ChangeStage(0);
-    }
-
-    public void ToggleTrackState(int index) {
-        bool newState = !spawnerManager.GetSpawnerState(index);
-
-        spawnerManager.SetSpawnerState(index, newState);
-        uiManager.SetSpawnerButtonState(index, newState);
-        audioManager.SetAudioState(index, newState);
     }
 
     public void ChangeStage(int index)
     {
         stageManager.ChangeActiveStage(index);
         uiManager.SetStageDropdownValue(index);
-        spawnerManager.Setup();
-        for (int i = 0; i < uiManager.spawnerButtons.Length; i++) {
-            spawnerManager.SetSpawnerState(i, uiManager.GetSpawnerButtonState(i));
-        }
-        spawnerManager.Restart();
         audioManager.Restart();
     }
 
