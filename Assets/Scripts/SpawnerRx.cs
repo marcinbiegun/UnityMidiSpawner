@@ -17,7 +17,6 @@ public class SpawnerRx : MonoBehaviour {
 
     void Awake()
     {
-        Debug.Log("AWAKE");
         noteSubscription = MessageBroker.Default.Receive<NoteEvent>()
             .Where(e => e.Track == track)
             .Subscribe(e => Spawn(e.Note, e.Power));

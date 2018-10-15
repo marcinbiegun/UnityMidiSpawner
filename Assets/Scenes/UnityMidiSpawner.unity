@@ -121,10 +121,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 13459150}
+  - component: {fileID: 13459151}
+  - component: {fileID: 13459155}
   - component: {fileID: 13459154}
   - component: {fileID: 13459153}
   - component: {fileID: 13459152}
-  - component: {fileID: 13459151}
   m_Layer: 0
   m_Name: Track_Synth
   m_TagString: Untagged
@@ -671,6 +672,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Track: 2
+--- !u!114 &13459155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 13459149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954b384e02065fd43bfcf7a200a0284a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  track: 2
 --- !u!1 &31566874
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,10 +876,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 124222584}
+  - component: {fileID: 124222585}
+  - component: {fileID: 124222589}
   - component: {fileID: 124222588}
   - component: {fileID: 124222587}
   - component: {fileID: 124222586}
-  - component: {fileID: 124222585}
   m_Layer: 0
   m_Name: Track_Drum
   m_TagString: Untagged
@@ -1413,6 +1427,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Track: 1
+--- !u!114 &124222589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 124222583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954b384e02065fd43bfcf7a200a0284a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  track: 1
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -5073,10 +5099,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2059543065}
+  - component: {fileID: 2059543069}
   - component: {fileID: 2059543068}
+  - component: {fileID: 2059543070}
   - component: {fileID: 2059543066}
   - component: {fileID: 2059543067}
-  - component: {fileID: 2059543069}
   m_Layer: 0
   m_Name: Track_Hat
   m_TagString: Untagged
@@ -5623,6 +5650,18 @@ MonoBehaviour:
   Note125: 0
   Note126: 0
   Note127: 0
+--- !u!114 &2059543070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2059543064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954b384e02065fd43bfcf7a200a0284a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  track: 0
 --- !u!1 &2073757781
 GameObject:
   m_ObjectHideFlags: 0
