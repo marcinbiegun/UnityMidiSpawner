@@ -3,7 +3,7 @@
  _Color("Color", Color) = (1,1,1,1)
  _MainTex("Albedo (RGB)", 2D) = "white" {}
  
- _Amount("Amount", Range(0,1)) = 0 //slider
+ _Amount("Amount", Range(0,10)) = 0 //slider
  _DisplacementTexture("Displacement Texture", 2D) = "white"{} //displacement texture
  }
  
@@ -27,7 +27,7 @@
  void vert(inout appdata_full v, out Input o) {
  
  //How much we expand, based on our DisplacementTexture
- float value = tex2Dlod(_DisplacementTexture, v.texcoord*7).x * _Amount;
+ float value = tex2Dlod(_DisplacementTexture, v.texcoord).x * _Amount;
  v.vertex.xyz += v.normal.xyz * value * .3; //Expand
  
  UNITY_INITIALIZE_OUTPUT(Input, o);
